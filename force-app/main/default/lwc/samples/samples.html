@@ -1,0 +1,58 @@
+<template>
+    <section class="slds-grid slds-wrap slds-gutters grid-gap">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+            <lightning-card title="Types">
+                <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                    <h3 class="slds-text-title_bold">Default</h3>
+                    <c-lwc-select options={options1}></c-lwc-select>
+
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Label stacked</h3>
+                    <c-lwc-select variant="label-stacked" required label="Select label" options={options1}
+                        field-level-help="Label stacked" data-selector="type-stacked"></c-lwc-select>
+
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Label inline</h3>
+                    <c-lwc-select variant="label-inline" required label="Select label" options={options1}
+                        field-level-help="Label inline" data-selector="type-inline"></c-lwc-select>
+                </div>
+            </lightning-card>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12">
+            <lightning-card title="Working with values">
+                <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                    <h3 class="slds-text-title_bold">No options</h3>
+                    <c-lwc-select variant="label-stacked" required label="No options" data-selector="no-options">
+                    </c-lwc-select>
+                    <lightning-button variant="base" label="Validate" onclick={handleClickValidate}></lightning-button>
+
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Pre selected value</h3>
+                    <c-lwc-select variant="label-stacked" label="Select Letter" options={options2} value="C"
+                        data-selector="pre-selected"></c-lwc-select>
+                    <div class="slds-grid">
+                        <lightning-button variant="base" class="slds-var-m-right_small" label="Change value"
+                            onclick={handleClickChangeValue}></lightning-button>
+
+                        <lightning-button variant="base" class="slds-var-m-right_small" label="Get value"
+                            onclick={handleClickGetValue}></lightning-button>
+                    </div>
+
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Multi-select (TODO)</h3>
+                    <c-lwc-select variant="label-stacked" label="Select letters" options={options2}
+                        data-selector="multi-select" multiple disabled></c-lwc-select>
+                    <lightning-button variant="base" class="slds-var-m-right_small" label="Get values"
+                        onclick={handleClickGetValue2}></lightning-button>
+
+
+                </div>
+
+            </lightning-card>
+        </div>
+
+
+
+    </section>
+</template>

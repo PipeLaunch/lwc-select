@@ -1,0 +1,25 @@
+<template>
+    <div class={computeFormElementClasses}>
+        <label if:true={label} class={computeLabelClass} for={guid}>
+            <abbr if:true={required} title="required" class="slds-required">* </abbr>
+            {label}
+            <lightning-helptext if:true={fieldLevelHelp} class="slds-var-m-left_xx-small custom-line-height_2"
+                content={fieldLevelHelp}>
+            </lightning-helptext>
+        </label>
+
+        <div class="slds-form-element__control">
+            <div class="slds-select_container">
+                <select class="slds-select" id={guid} name={name} required={required} disabled={disabled}
+                    multiple={multiple} onchange={handleChange} oninvalid={handleInvalid}>
+                    <template if:true={options}>
+                        <template for:each={options} for:item="option" for:index="index">
+                            <option key={option.value} value={option.value} selected={option.selected}>{option.label}</option>
+                        </template>
+                    </template>
+                </select>
+            </div>
+        </div>
+        <div if:true={status.errors} class="slds-form-element__help">{status.errors}</div>
+    </div>
+</template>
