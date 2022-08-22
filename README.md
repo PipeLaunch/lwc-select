@@ -24,7 +24,7 @@ Everything was developed in a single LWC, so you just need a new single componen
 - Call the component and pass the options
 ```
 <c-lwc-select variant="label-stacked" required label="Select label" options={options1}
-                        field-level-help="Label stacked" data-selector="type-stacked"></c-lwc-select>
+ field-level-help="Label stacked" data-selector="type-stacked"></c-lwc-select>
 ```
 
 ### Testing and learn how to use it
